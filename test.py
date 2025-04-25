@@ -21,8 +21,8 @@ model_id = "google/gemma-3-4b-pt" # or `google/gemma-3-12b-pt`, `google/gemma-3-
 
 # CSV_PATH = "/Users/meiyi/Desktop/documents/GT/Spring_2025/Project/data/food_image_recipe.csv"
 # IMAGE_PATH = "/Users/meiyi/Desktop/documents/GT/Spring_2025/Project/data/food_images"
-CSV_PATH = "../data/image_recipe_mapping_100.csv"
-IMAGE_PATH = "../data/food_images"
+CSV_PATH = "./kaggle/clean.csv"
+IMAGE_PATH = "kaggle/Food Images/Food Images"
 SYSTEM_MESSAGE = "You are an expert chef and cooking recipe writer."
 
 # processor = AutoProcessor.from_pretrained(model_id)
