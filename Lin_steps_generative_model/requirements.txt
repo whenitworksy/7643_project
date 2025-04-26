@@ -1,0 +1,39 @@
+# Hugging Face Core
+transformers==4.38.0
+datasets>=2.17.0
+peft==0.10.0
+accelerate>=0.24.0
+timm
+
+# LoRA & QLoRA Support
+bitsandbytes>=0.41.2
+scipy
+scikit-learn
+
+# CLIP (Image encoder)
+ftfy
+regex
+tqdm
+Pillow
+
+# Tokenizer utils
+sentencepiece
+protobuf<=3.20.3
+
+# Logging and training tools
+tensorboard
+matplotlib
+
+# Optional: dataset tools
+pandas
+jupyterlab
+ipywidgets
+huggingface_hub
+
+# Language tokenization
+nltk==3.8.1
+rouge-score==0.1.2
+sentence-transformers==2.3.1
+
+# similarity
+faiss-cpu
