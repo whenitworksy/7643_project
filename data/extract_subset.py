@@ -4,8 +4,8 @@ from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Config
-image_base_path = Path("data/train_data")
-output_dir = Path("data/mini_data")
+image_base_path = Path("../../recipe1m/recipe1m_images/recipe1M_images_train/train")
+output_dir = Path("mini_data")
 output_dir.mkdir(parents=True, exist_ok=True)
 
 # Convert image ID to nested file path
@@ -13,10 +13,10 @@ def image_id_to_path(image_id: str, base=image_base_path):
     return base / image_id[0] / image_id[1] / image_id[2] / image_id[3] / image_id  # includes .jpg
 
 # Load JSONs
-with open("data/recipe1m_images/layer1.json", "r", encoding="utf-8") as f:
+with open("recipe1m_images/layer1.json", "r", encoding="utf-8") as f:
     layer1 = {r["id"]: r for r in json.load(f)}
 
-with open("data/recipe1m_images/layer2.json", "r", encoding="utf-8") as f:
+with open("recipe1m_images/layer2.json", "r", encoding="utf-8") as f:
     layer2 = json.load(f)
 
 # Threading
@@ -33,6 +33,7 @@ def process_entry(entry):
             return {
                 "image": img_path.name,
                 "image_id": img_id,
+                "title": recipe["title"],
                 "ingredients": [ing["text"].lower() for ing in recipe["ingredients"]],
                 "instructions": [instr["text"] for instr in recipe["instructions"]],
             }
@@ -55,7 +56,7 @@ subset = random.sample(valid_recipes, subset_size)
 
 for recipe in subset:
     src = image_id_to_path(recipe["image_id"])
-    dst = output_dir / recipe["image"]
+    dst = output_dir / "images" / recipe["image"]
     shutil.copy(src, dst)
 
 # Save JSON
