@@ -1,1 +1,0 @@
-validation data - extracted from 94gb train.tar file
