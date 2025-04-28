@@ -1,0 +1,5 @@
+py -3.12 -m venv recipe-env
+activate in the venv directory (Scripts folder)
+python.exe -m pip install --upgrade pip
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+pip install -r requirements.txt
