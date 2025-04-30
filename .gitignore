@@ -183,3 +183,7 @@ kaggle_cleaned_recipes.json
 **/mini_data/
 **/mini_data_val/
 **/mini_data_test/
+/flash-attention-main
+/notebooks/checkpoints
+/notebooks/metric_df.csv
+/notebooks/outputs
