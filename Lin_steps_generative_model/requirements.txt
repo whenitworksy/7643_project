@@ -29,11 +29,12 @@ pandas
 jupyterlab
 ipywidgets
 huggingface_hub
-
+seaborn
+tabulate
 # Language tokenization
 nltk==3.8.1
 rouge-score==0.1.2
 sentence-transformers==2.3.1
-
+evaluate
 # similarity
 faiss-cpu
